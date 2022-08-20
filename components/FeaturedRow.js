@@ -32,7 +32,7 @@ const FeaturedRow = ({ id, title, description, featuredCategory }) => {
   return (
     <View id={id}>
         <TouchableOpacity 
-                onPress={() => { navigation.navigate('Restaurant Collection', {id, title, description }) }} className="flex-row items-center justify-between pr-3 pt-5 pb-3">
+                onPress={() => { navigation.navigate('Restaurant Collection', {id, title, description }) }} className="flex-row items-center justify-between px-3 pt-5 pl-3">
             <View>
                 <Text className="text-lg font-bold">{title}</Text>
                 <Text className="text-md text-gray-400">{description}</Text>
@@ -44,6 +44,7 @@ const FeaturedRow = ({ id, title, description, featuredCategory }) => {
         <ScrollView
             horizontal
             showsVerticalScrollIndicator={false}
+            className="pt-2"
         >
            
 

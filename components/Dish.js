@@ -9,14 +9,12 @@ import {
 import { addToBasket, selectBasketItemsWithId, removeFromBasket } from '../features/basketSlice'
 
 const Dish = ({ id, name, description, price, image }) => {
-    const [isPressed, setIsPressed] = useState(false);
+    //const [isPressed, setIsPressed] = useState(false);
     const items = useSelector((state) => selectBasketItemsWithId(state, id));
     const dispatch = useDispatch();
 
     const addItemToBasket = () => {
-        if(isPressed == false){
-            setIsPressed(true);
-        }
+        
         
         dispatch(addToBasket({ id, name, description, price, image }))
 
@@ -32,9 +30,7 @@ const Dish = ({ id, name, description, price, image }) => {
         dispatch(removeFromBasket({ id }))
         //console.log(items.length)
 
-        if(items.length == 0){
-            setIsPressed(false)
-        }
+        
     }
 
     return (        
@@ -50,7 +46,7 @@ const Dish = ({ id, name, description, price, image }) => {
                         }}
                         className="w-20 h-20 rounded-2xl p-4"
                     />
-                    {isPressed ? (
+                    {items?.length > 0 ? (
                         <View className="w-4/5 left-2 -top-3 bg-white border border-green-600  rounded-md">
                             <View className="flex-row justify-between items-center space-x-2">
                                 

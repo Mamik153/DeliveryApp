@@ -23,7 +23,7 @@ const FeaturedCard = ({
   return (
     <TouchableOpacity 
         id={id} 
-        className="bg-white shadow-xl rounded-xl w-48 mr-3"
+        className="bg-white shadow-xl rounded-xl w-48 mx-3"
         style={{ 
             elevation: 10,
             boxShadow: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px',        
@@ -47,7 +47,7 @@ const FeaturedCard = ({
             source={{
                 uri: urlFor(imgUrl).url(),
             }}
-            className="rounded-xl w-full h-24 object-cover"
+            className="rounded-2xl w-full aspect-video object-cover"
         />
         <View className="p-2 rounded-b-lg">
             <Text>{title}</Text>
